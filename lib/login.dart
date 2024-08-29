@@ -39,7 +39,7 @@ class _LoginState extends State<Login> {
             )
           ],
         ),
-        toolbarHeight: 130,
+        toolbarHeight: 100,
         flexibleSpace: Container(
             decoration: const BoxDecoration(
                 image: DecorationImage(
