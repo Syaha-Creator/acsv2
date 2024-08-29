@@ -154,7 +154,7 @@ class _LoginState extends State<Login> {
                                   alignment: Alignment.center,
                                   child: MaterialButton(
                                     onPressed: () {},
-                                    color: Colors.indigo,
+                                    color: Colors.blue,
                                     shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.all(
                                         Radius.circular(10),
