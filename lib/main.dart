@@ -3,5 +3,5 @@ import 'package:flutter/material.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  runApp(MaterialApp(debugShowCheckedModeBanner: false, home: Login()));
+  runApp(const MaterialApp(debugShowCheckedModeBanner: false, home: Login()));
 }

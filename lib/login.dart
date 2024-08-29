@@ -15,7 +15,7 @@ class _LoginState extends State<Login> {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         centerTitle: false,
-        title: Column(
+        title: const Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
@@ -41,7 +41,7 @@ class _LoginState extends State<Login> {
         ),
         toolbarHeight: 130,
         flexibleSpace: Container(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
                 image: DecorationImage(
                     image: AssetImage('assets/Top.png'), fit: BoxFit.fill))),
       ),
@@ -57,7 +57,7 @@ class _LoginState extends State<Login> {
                 child: Column(
                   children: <Widget>[
                     Container(
-                      margin: EdgeInsets.only(left: 15, right: 15),
+                      margin: const EdgeInsets.only(left: 15, right: 15),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -65,7 +65,7 @@ class _LoginState extends State<Login> {
                             'assets/login.png',
                             width: 300,
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 20,
                           ),
                           Container(
@@ -84,7 +84,7 @@ class _LoginState extends State<Login> {
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Text(
+                                const Text(
                                   'Email',
                                   style: TextStyle(
                                       fontFamily: 'Poppins',
@@ -92,22 +92,22 @@ class _LoginState extends State<Login> {
                                       letterSpacing: 1,
                                       fontSize: 14),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 10,
                                 ),
                                 TextFormField(
                                   keyboardType: TextInputType.emailAddress,
                                   decoration: InputDecoration(
                                     hintText: 'Masukkan Email Anda',
-                                    prefixIcon: Icon(Icons.email),
-                                    hintStyle: TextStyle(
+                                    prefixIcon: const Icon(Icons.email),
+                                    hintStyle: const TextStyle(
                                       fontSize: 12,
                                       fontWeight: FontWeight.w400,
                                       fontFamily: 'Poppins',
                                       letterSpacing: 1,
                                     ),
                                     enabledBorder: OutlineInputBorder(
-                                      borderSide: BorderSide(
+                                      borderSide: const BorderSide(
                                         width: 1,
                                         color: Colors.grey,
                                       ),
@@ -115,10 +115,10 @@ class _LoginState extends State<Login> {
                                     ),
                                   ),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 10,
                                 ),
-                                Text(
+                                const Text(
                                   'Password',
                                   style: TextStyle(
                                       fontFamily: 'Poppins',
@@ -126,28 +126,29 @@ class _LoginState extends State<Login> {
                                       fontWeight: FontWeight.w600,
                                       letterSpacing: 1),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 10,
                                 ),
                                 TextFormField(
                                   decoration: InputDecoration(
                                     hintText: 'Masukkan Password Anda',
-                                    prefixIcon: Icon(Icons.key),
+                                    prefixIcon: const Icon(Icons.key),
                                     // suffixIcon: GestureDetector(
                                     //   onTap: {},
-                                    hintStyle: TextStyle(
+                                    hintStyle: const TextStyle(
                                       fontSize: 12,
                                       fontWeight: FontWeight.w400,
                                       fontFamily: 'Poppins',
+                                      letterSpacing: 1,
                                     ),
                                     enabledBorder: OutlineInputBorder(
-                                      borderSide: BorderSide(
+                                      borderSide: const BorderSide(
                                           width: 1, color: Colors.grey),
                                       borderRadius: BorderRadius.circular(10),
                                     ),
                                   ),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 10,
                                 ),
                                 Align(
@@ -155,12 +156,12 @@ class _LoginState extends State<Login> {
                                   child: MaterialButton(
                                     onPressed: () {},
                                     color: Colors.blueAccent,
-                                    shape: RoundedRectangleBorder(
+                                    shape: const RoundedRectangleBorder(
                                       borderRadius: BorderRadius.all(
                                         Radius.circular(10),
                                       ),
                                     ),
-                                    child: Text(
+                                    child: const Text(
                                       "Login",
                                       style: TextStyle(color: Colors.white),
                                     ),
@@ -176,13 +177,9 @@ class _LoginState extends State<Login> {
                 ),
               ),
             ),
-
-            //Footer Container
-            //Here you will get unexpected behaviour when keyboard pops-up.
-            //So its better to use `bottomNavigationBar` to avoid this.
             Container(
                 height: 100,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                     image: DecorationImage(
                         image: AssetImage('assets/Bot.png'),
                         fit: BoxFit.fill))),
