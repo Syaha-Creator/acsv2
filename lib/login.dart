@@ -22,7 +22,7 @@ class _LoginState extends State<Login> {
               'Welcome ACS,',
               style: TextStyle(
                 fontFamily: 'Poppins',
-                fontWeight: FontWeight.w600,
+                fontWeight: FontWeight.bold,
                 letterSpacing: 1,
                 color: Colors.white,
                 fontSize: 24,
@@ -154,7 +154,7 @@ class _LoginState extends State<Login> {
                                   alignment: Alignment.center,
                                   child: MaterialButton(
                                     onPressed: () {},
-                                    color: Colors.blue,
+                                    color: Colors.blueAccent,
                                     shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.all(
                                         Radius.circular(10),
