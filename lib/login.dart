@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:acsv2/backend/url.dart';
-import 'package:acsv2/fragment.dart';
+import 'package:acsv2/home.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:http/http.dart' as http;
@@ -99,7 +99,7 @@ class _LoginState extends State<Login> {
         // Login API(Id);
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => Fragment()),
+          MaterialPageRoute(builder: (context) => Home()),
         );
         Fluttertoast.showToast(
             msg: "Selamat Datang",
@@ -152,7 +152,7 @@ class _LoginState extends State<Login> {
 
       if (name != null) {
         Navigator.of(context)
-            .push(MaterialPageRoute(builder: (context) => Fragment()));
+            .push(MaterialPageRoute(builder: (context) => Home()));
       } else {
         Login();
       }
