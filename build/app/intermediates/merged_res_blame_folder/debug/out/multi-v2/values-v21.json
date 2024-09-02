@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.syahrul.acsv2.app-mergeDebugResources-25:/values-v21/values-v21.xml",
+            "outputFile": "com.syahrul.acsv2.app-mergeDebugResources-29:/values-v21/values-v21.xml",
             "map": [
                 {
                     "source": "/Users/syahrulazhar/.gradle/caches/transforms-3/67a2055b0671aa3010f0bc50e19049d7/transformed/core-1.13.1/res/values-v21/values-v21.xml",

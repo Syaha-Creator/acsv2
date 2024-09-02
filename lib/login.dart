@@ -247,6 +247,7 @@ class _LoginState extends State<Login> {
                                   height: 10,
                                 ),
                                 TextFormField(
+                                  controller: formemail,
                                   keyboardType: TextInputType.emailAddress,
                                   decoration: InputDecoration(
                                     hintText: 'Masukkan Email Anda',
@@ -315,7 +316,9 @@ class _LoginState extends State<Login> {
                                 Align(
                                   alignment: Alignment.center,
                                   child: MaterialButton(
-                                    onPressed: () {},
+                                    onPressed: () {
+                                      create();
+                                    },
                                     color: Colors.blueAccent,
                                     shape: const RoundedRectangleBorder(
                                       borderRadius: BorderRadius.all(
