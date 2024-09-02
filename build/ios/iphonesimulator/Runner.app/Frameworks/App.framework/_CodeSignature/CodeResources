@@ -10,19 +10,19 @@
 		</data>
 		<key>flutter_assets/AssetManifest.bin</key>
 		<data>
-		SfNeNaQqoj/r9FLmGO4xQtyxLtU=
+		OZkAgBYErR1hPllzm7YWdxw7/yc=
 		</data>
 		<key>flutter_assets/AssetManifest.json</key>
 		<data>
-		zanVcE/57IA5pWmoe2RsnXSFRxA=
+		DTZWw1wwkXvrUsJYCvR+62Jwn8E=
 		</data>
 		<key>flutter_assets/FontManifest.json</key>
 		<data>
-		Am/pRF92IrZbwFBtSaElg1+OjGo=
+		uHzrdzJHVYOqggyd2eSQvnwV9gA=
 		</data>
 		<key>flutter_assets/NOTICES.Z</key>
 		<data>
-		MtGhqy1N83LymF+xVlvBDq1bNtY=
+		I9XxFcHaLzdrQFcQg8Hx4+u85NQ=
 		</data>
 		<key>flutter_assets/assets/.DS_Store</key>
 		<data>
@@ -39,6 +39,10 @@
 		<key>flutter_assets/assets/Union.png</key>
 		<data>
 		QgUKcDYrGYQmsxNZoIl/SxMcFWY=
+		</data>
+		<key>flutter_assets/assets/fonts/Poppins-Bold.ttf</key>
+		<data>
+		h1zwzs1ke88i551jPYaMGx7Jjfo=
 		</data>
 		<key>flutter_assets/assets/fonts/Poppins-Regular.ttf</key>
 		<data>
@@ -58,11 +62,23 @@
 		</data>
 		<key>flutter_assets/kernel_blob.bin</key>
 		<data>
-		KuLOnPb19AIVbE91Fn0wyxRDifQ=
+		D1/5DF9UzA3xwDo8i2lS9sHcIjk=
 		</data>
 		<key>flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
 		<data>
 		Bvk+P1ykE1PGRdktwgwDyz6AOqM=
+		</data>
+		<key>flutter_assets/packages/fluttertoast/assets/toastify.css</key>
+		<data>
+		HVkEhoid+n6bwOYCwZg4DdmGBHY=
+		</data>
+		<key>flutter_assets/packages/fluttertoast/assets/toastify.js</key>
+		<data>
+		v5LMft1C/Ps/+tw6D+zco3p3Urk=
+		</data>
+		<key>flutter_assets/packages/progress_dialog_null_safe/assets/double_ring_loading_io.gif</key>
+		<data>
+		PhtKHoUCmKL1POxRfJ28VCVSc6I=
 		</data>
 		<key>flutter_assets/shaders/ink_sparkle.frag</key>
 		<data>
@@ -79,28 +95,28 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			I5wbtsOyLYf8EYu0A9WtCGPs+rw83Er2+kRYlcWN9fw=
+			8klu5tTH2/CedSSPXz91Gns9hAmJazldNdv7PcyKevM=
 			</data>
 		</dict>
 		<key>flutter_assets/AssetManifest.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			mUhtg8oH+h8kyIM8RT75dX0R203HAHlQUIyrViNonXc=
+			O9DSpsdw+GPL5t5UWr99uXzAjg53c8aQFuevkD5LM3I=
 			</data>
 		</dict>
 		<key>flutter_assets/FontManifest.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			3M7uJD9sjtHtkZ2OaG7bpT+orMZE74Qizw2UswZBYZc=
+			1i/MWvVQAiq3ArOE/eUqDDDgnPTBGxaV3CqwTfQMjEc=
 			</data>
 		</dict>
 		<key>flutter_assets/NOTICES.Z</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			eH0WBS/Rqj+Xj/ifDN1v0/73XCfI+QjAo+WtfyEImFY=
+			jQ+b9D8lHxJmFvSd2OSv6F//igvYU5N76MkfZXFMzuk=
 			</data>
 		</dict>
 		<key>flutter_assets/assets/Bot.png</key>
@@ -122,6 +138,13 @@
 			<key>hash2</key>
 			<data>
 			ZOw3b3rG7PXHexAfeELR2IJpsImamRc80jON83/blqw=
+			</data>
+		</dict>
+		<key>flutter_assets/assets/fonts/Poppins-Bold.ttf</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			chlUfuJTNMusD+SzrPC/Yx5I67YixxrwOO2qplLGCHU=
 			</data>
 		</dict>
 		<key>flutter_assets/assets/fonts/Poppins-Regular.ttf</key>
@@ -156,7 +179,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			xrWQrAQoAkF31G/sjblYZNkkx105M9reM1ZcgkefYPY=
+			QhDt5KjmR7OnXeSpcji8dT4+HXlfoJgCHig6DpdolCc=
 			</data>
 		</dict>
 		<key>flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
@@ -164,6 +187,27 @@
 			<key>hash2</key>
 			<data>
 			Z8RP6Rg7AC553ef2l34piGYcmj5KPF/OloeH79vtgjw=
+			</data>
+		</dict>
+		<key>flutter_assets/packages/fluttertoast/assets/toastify.css</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			abr0T+pbPv0zd7q8FU7xuDv4JjuRAgKox9bnRddRNJ8=
+			</data>
+		</dict>
+		<key>flutter_assets/packages/fluttertoast/assets/toastify.js</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			CRyacJlKIATuArBPER1Aq+QMB7BmhWOZ9YxYcELsKZA=
+			</data>
+		</dict>
+		<key>flutter_assets/packages/progress_dialog_null_safe/assets/double_ring_loading_io.gif</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			Effj/w9A95+O8ciyuDy31KU7e+mmG3Oh/pJMu+S9VMU=
 			</data>
 		</dict>
 		<key>flutter_assets/shaders/ink_sparkle.frag</key>
