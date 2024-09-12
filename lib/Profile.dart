@@ -1,3 +1,4 @@
+// ignore: file_names
 import 'package:acsv2/backend/style.dart';
 import 'package:flutter/material.dart';
 
@@ -19,7 +20,7 @@ class _ProfileState extends State<Profile> {
         flexibleSpace: Container(
           decoration: kBoxStyleGradient,
         ),
-        title: Column(
+        title: const Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
@@ -33,22 +34,20 @@ class _ProfileState extends State<Profile> {
           ],
         ),
       ),
-      body: SingleChildScrollView(
-        child: Container(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SizedBox(
-                height: 15,
+      body: const SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SizedBox(
+              height: 15,
+            ),
+            Text(
+              "Hai",
+              style: TextStyle(
+                color: Colors.blueAccent,
               ),
-              Text(
-                "Hai",
-                style: TextStyle(
-                  color: Colors.blueAccent,
-                ),
-              )
-            ],
-          ),
+            )
+          ],
         ),
       ),
     );

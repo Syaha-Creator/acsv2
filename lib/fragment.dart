@@ -1,5 +1,4 @@
 import 'package:acsv2/Profile.dart';
-import 'package:acsv2/home.dart';
 import 'package:flutter/material.dart';
 
 class Fragment extends StatefulWidget {
@@ -12,13 +11,13 @@ class Fragment extends StatefulWidget {
 class _FragmentState extends State<Fragment> {
   int _currenIndex = 0;
   final tabs = [
-    Center(
-      child: Home(),
-    ),
-    Center(
+    const Center(
+        // child: Home(),
+        ),
+    const Center(
         // child: Listdata(),
         ),
-    Center(
+    const Center(
       child: Profile(),
     ),
   ];

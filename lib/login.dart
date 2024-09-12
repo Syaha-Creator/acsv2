@@ -48,20 +48,11 @@ class _LoginState extends State<Login> {
     email = formemail.text.toString();
     password = formpass.text.toString();
 
-    print("url = " +
-        URLV2 +
-        "oauth/token?grant_type=password&email=" +
-        email! +
-        "&password=" +
-        password! +
-        Client_Andro);
+    print(
+        "url = ${URLV2}oauth/token?grant_type=password&email=${email!}&password=${password!}$Client_Andro");
     var response = await http.post(
-        Uri.parse(URLV2 +
-            "oauth/token?grant_type=password&email=" +
-            email! +
-            "&password=" +
-            password! +
-            Client_Andro),
+        Uri.parse(
+            "${URLV2}oauth/token?grant_type=password&email=${email!}&password=${password!}$Client_Andro"),
         headers: <String, String>{
           'Content-Type': 'application/json; charset=UTF-8',
         },
@@ -95,11 +86,11 @@ class _LoginState extends State<Login> {
 
         print(response.statusCode);
         print(namaAPI);
-        print("result = " + data.toString());
+        print("result = $data");
         // Login API(Id);
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => Home()),
+          MaterialPageRoute(builder: (context) => const Home()),
         );
         Fluttertoast.showToast(
             msg: "Selamat Datang",
@@ -152,9 +143,9 @@ class _LoginState extends State<Login> {
 
       if (name != null) {
         Navigator.of(context)
-            .push(MaterialPageRoute(builder: (context) => Home()));
+            .push(MaterialPageRoute(builder: (context) => const Home()));
       } else {
-        Login();
+        const Login();
       }
     });
   }
@@ -164,6 +155,7 @@ class _LoginState extends State<Login> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         backgroundColor: Colors.transparent,
         centerTitle: false,
         title: const Column(

@@ -28,12 +28,12 @@ final kBoxStyleGradient = BoxDecoration(
   ],
 );
 
-final textstyle =
-    TextStyle(fontSize: 14, color: Colors.blue, fontWeight: FontWeight.w600);
+final textstyle = const TextStyle(
+    fontSize: 14, color: Colors.blue, fontWeight: FontWeight.w600);
 
-final textstyle2 =
-    TextStyle(fontSize: 18, color: Colors.black, fontWeight: FontWeight.w600);
+final textstyle2 = const TextStyle(
+    fontSize: 18, color: Colors.black, fontWeight: FontWeight.w600);
 
-final textstyle3 = TextStyle(fontSize: 12, color: Colors.blue);
+final textstyle3 = const TextStyle(fontSize: 12, color: Colors.blue);
 
-final textstyle4 = TextStyle(fontSize: 12, color: Colors.white);
+final textstyle4 = const TextStyle(fontSize: 18, color: Colors.white);
