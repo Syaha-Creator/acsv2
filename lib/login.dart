@@ -214,10 +214,10 @@ class _LoginState extends State<Login> {
                           Container(
                             padding: const EdgeInsets.all(10),
                             decoration: const BoxDecoration(
-                                color: Color.fromARGB(255, 255, 255, 255),
+                                color: Color(0xFFFFFFFF),
                                 boxShadow: [
                                   BoxShadow(
-                                    color: Color.fromARGB(255, 255, 255, 255),
+                                    color: Color(0xFFFFFFFF),
                                     blurRadius: 8.0,
                                   )
                                 ],
@@ -333,12 +333,12 @@ class _LoginState extends State<Login> {
                 ),
               ),
             ),
-            Container(
-                height: 100,
-                decoration: const BoxDecoration(
-                    image: DecorationImage(
-                        image: AssetImage('assets/Bot.png'),
-                        fit: BoxFit.fill))),
+            // Container(
+            //     height: 100,
+            //     decoration: const BoxDecoration(
+            //         image: DecorationImage(
+            //             image: AssetImage('assets/Bot.png'),
+            //             fit: BoxFit.fill))),
           ],
         ),
       ),

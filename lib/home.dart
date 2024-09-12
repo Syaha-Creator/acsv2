@@ -82,7 +82,6 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return WillPopScope(
         child: Scaffold(
-          resizeToAvoidBottomInset: false,
           appBar: AppBar(
             centerTitle: true,
             automaticallyImplyLeading: false,
