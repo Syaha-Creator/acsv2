@@ -148,8 +148,9 @@ class _InvoiceState extends State<Invoice> {
     if (responseData.statusCode == 200) {
       final data = jsonDecode(responseData.body);
       var array = data["result"];
-
-      models = array
+      var filteredList;
+      filteredList = array.where((val) => val["creator"] == nama);
+      models = filteredList
           .map<datamodel>((parsedJson) => datamodel.fromJson(parsedJson))
           .toList();
       setState(() {

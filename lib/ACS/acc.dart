@@ -47,6 +47,7 @@ class _AccState extends State<Acc> {
   ProgressDialog? progressDialog;
   bool loading = false;
   List<datamodel> models = [];
+  final _formKey = GlobalKey<FormState>();
 
   @override
   void initState() {
@@ -166,214 +167,226 @@ class _AccState extends State<Acc> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        toolbarHeight: 100,
-        centerTitle: false,
-        title: const Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              "Scan Surat Jalan",
-              style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.w600,
-                letterSpacing: 1,
-                color: Colors.white,
-                fontFamily: 'Poppins',
-              ),
-            ),
-            Text(
-              "Isi data dengan benar",
-              style: TextStyle(
-                fontFamily: 'Poppins',
-                fontSize: 12,
-                fontWeight: FontWeight.w200,
-                letterSpacing: 1,
-                color: Colors.white,
-              ),
-            ),
-          ],
-        ),
-        flexibleSpace: Container(
-          decoration: const BoxDecoration(
-              image: DecorationImage(
-                  image: AssetImage('assets/home.png'), fit: BoxFit.fill)),
-        ),
-      ),
-      body: SingleChildScrollView(
-        child: Container(
-          margin: EdgeInsets.only(left: 15, top: 15, right: 15),
-          child: Column(
+        appBar: AppBar(
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+          toolbarHeight: 100,
+          centerTitle: false,
+          title: const Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Container(
-                margin: EdgeInsets.only(top: 20),
-                padding: EdgeInsets.all(10),
-                width: MediaQuery.of(context).size.width / 1,
-                height: MediaQuery.of(context).size.height / 3,
-                decoration: kBoxStyle,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "Nama :",
-                      style: textstyle,
-                    ),
-                    Text(
-                      "$nama",
-                      style: textstyle2,
-                    ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    Text(
-                      "User ID :",
-                      style: textstyle,
-                    ),
-                    Text(
-                      "$id",
-                      style: textstyle2,
-                    ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    Text(
-                      "Delivery Number :",
-                      style: textstyle,
-                    ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    Row(
-                      children: [
-                        IconButton(
-                            onPressed: () {
-                              _buildQrView(context);
-                              forminput.clear();
-                            },
-                            icon: Icon(Icons.qr_code)),
-                        Container(
-                          height: 50,
-                          width: MediaQuery.of(context).size.width / 1.4,
-                          child: TextFormField(
-                            keyboardType: TextInputType.number,
-                            onSaved: (e) => serial = e!,
-                            controller: forminput,
-                            decoration: InputDecoration(
-                                enabledBorder: OutlineInputBorder(
-                                  borderSide: const BorderSide(
-                                      width: 1,
-                                      color: Colors.grey), //<-- SEE HERE
-                                  borderRadius: BorderRadius.circular(10),
-                                ),
-                                // labelText: "Serial Number",
-                                hintText: result,
-                                hintStyle: TextStyle(color: Colors.black)),
-                            onChanged: (value) {
-                              result = value;
-                            },
-                          ),
-                        )
-                      ],
-                    ),
-                    Container(
-                        alignment: Alignment.center,
-                        width: MediaQuery.of(context).size.width * 1,
-                        margin: EdgeInsets.only(top: 20),
-                        child: ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                                backgroundColor: const Color(0xFF1760FF)),
-                            onPressed: () {
-                              print(result);
-                              save();
-                            },
-                            child: Text("Simpan", style: textstyle4))),
-                  ],
+              Text(
+                "Scan Surat Jalan",
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.w600,
+                  letterSpacing: 1,
+                  color: Colors.white,
+                  fontFamily: 'Poppins',
                 ),
               ),
-              SizedBox(
-                height: 20,
-              ),
-              Text("List Data", style: textstyle2),
-              Divider(),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    "Delivery \nNumber",
-                    style: TextStyle(
-                      fontSize: 12,
-                    ),
-                  ),
-                  Text(
-                    "Tanggal Input",
-                    style: TextStyle(
-                      fontSize: 12,
-                    ),
-                  ),
-                  Text(
-                    "Creator",
-                    style: TextStyle(
-                      fontSize: 12,
-                    ),
-                  ),
-                ],
-              ),
-              Divider(),
-              SizedBox(
-                height: MediaQuery.of(context).size.height / 1.5,
-                child: loading
-                    ? CircularProgressIndicator()
-                    : StatefulBuilder(
-                        builder: (BuildContext context, StateSetter alerState) {
-                          return SizedBox(
-                            height: MediaQuery.of(context).size.height / 0.5,
-                            child: ListView.builder(
-                                itemCount: models.length,
-                                itemBuilder: (context, index) {
-                                  String date = models[index].date;
-                                  DateFormat oldFormat =
-                                      DateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ");
-                                  DateFormat newFormat =
-                                      DateFormat("yyyy-MM-dd");
-                                  DateFormat jamformat = DateFormat("HH:mm");
-                                  String dateStr =
-                                      newFormat.format(oldFormat.parse(date));
-                                  String showjam =
-                                      jamformat.format(oldFormat.parse(date));
-
-                                  return Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      Text(
-                                        models[index].deliverynumber,
-                                        style: textstyle,
-                                      ),
-                                      Text(
-                                        "$dateStr - $showjam",
-                                        style: TextStyle(
-                                          fontSize: 12,
-                                        ),
-                                      ),
-                                      Text(
-                                        models[index].name,
-                                        style: TextStyle(
-                                          fontSize: 12,
-                                        ),
-                                      ),
-                                    ],
-                                  );
-                                }),
-                          );
-                        },
-                      ),
+              Text(
+                "Isi data dengan benar",
+                style: TextStyle(
+                  fontFamily: 'Poppins',
+                  fontSize: 12,
+                  fontWeight: FontWeight.w200,
+                  letterSpacing: 1,
+                  color: Colors.white,
+                ),
               ),
             ],
           ),
+          flexibleSpace: Container(
+            decoration: const BoxDecoration(
+                image: DecorationImage(
+                    image: AssetImage('assets/home.png'), fit: BoxFit.fill)),
+          ),
         ),
-      ),
-    );
+        body: Form(
+          key: _formKey,
+          child: SingleChildScrollView(
+            child: Container(
+              margin: EdgeInsets.only(left: 15, top: 15, right: 15),
+              child: Column(
+                children: [
+                  Container(
+                    margin: EdgeInsets.only(top: 20),
+                    padding: EdgeInsets.all(10),
+                    width: MediaQuery.of(context).size.width / 1,
+                    height: MediaQuery.of(context).size.height / 3,
+                    decoration: kBoxStyle,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Nama :",
+                          style: textstyle,
+                        ),
+                        Text(
+                          "$nama",
+                          style: textstyle2,
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Text(
+                          "User ID :",
+                          style: textstyle,
+                        ),
+                        Text(
+                          "$id",
+                          style: textstyle2,
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Text(
+                          "Delivery Number :",
+                          style: textstyle,
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Row(
+                          children: [
+                            IconButton(
+                                onPressed: () {
+                                  _buildQrView(context);
+                                  forminput.clear();
+                                },
+                                icon: Icon(Icons.qr_code)),
+                            Container(
+                              height: 50,
+                              width: MediaQuery.of(context).size.width / 1.4,
+                              child: TextFormField(
+                                validator: (e) {
+                                  if (e!.isEmpty) {
+                                    return "Please Insert Number";
+                                  }
+                                },
+                                keyboardType: TextInputType.number,
+                                onSaved: (e) => serial = e!,
+                                controller: forminput,
+                                decoration: InputDecoration(
+                                    enabledBorder: OutlineInputBorder(
+                                      borderSide: const BorderSide(
+                                          width: 1,
+                                          color: Colors.grey), //<-- SEE HERE
+                                      borderRadius: BorderRadius.circular(10),
+                                    ),
+                                    // labelText: "Serial Number",
+                                    hintText: result,
+                                    hintStyle: TextStyle(color: Colors.black)),
+                                onChanged: (value) {
+                                  result = value;
+                                },
+                              ),
+                            )
+                          ],
+                        ),
+                        Container(
+                            alignment: Alignment.center,
+                            width: MediaQuery.of(context).size.width * 1,
+                            margin: EdgeInsets.only(top: 20),
+                            child: ElevatedButton(
+                                style: ElevatedButton.styleFrom(
+                                    backgroundColor: const Color(0xFF1760FF)),
+                                onPressed: () {
+                                  if (_formKey.currentState!.validate()) {
+                                    print(result);
+                                    save();
+                                  }
+                                },
+                                child: Text("Simpan", style: textstyle4))),
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Text("List Data", style: textstyle2),
+                  Divider(),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        "Delivery \nNumber",
+                        style: TextStyle(
+                          fontSize: 12,
+                        ),
+                      ),
+                      Text(
+                        "Tanggal Input",
+                        style: TextStyle(
+                          fontSize: 12,
+                        ),
+                      ),
+                      Text(
+                        "Creator",
+                        style: TextStyle(
+                          fontSize: 12,
+                        ),
+                      ),
+                    ],
+                  ),
+                  Divider(),
+                  SizedBox(
+                    height: MediaQuery.of(context).size.height / 1.5,
+                    child: loading
+                        ? CircularProgressIndicator()
+                        : StatefulBuilder(
+                            builder:
+                                (BuildContext context, StateSetter alerState) {
+                              return SizedBox(
+                                height:
+                                    MediaQuery.of(context).size.height / 0.5,
+                                child: ListView.builder(
+                                    itemCount: models.length,
+                                    itemBuilder: (context, index) {
+                                      String date = models[index].date;
+                                      DateFormat oldFormat = DateFormat(
+                                          "yyyy-MM-dd'T'HH:mm:ss.SSSZ");
+                                      DateFormat newFormat =
+                                          DateFormat("yyyy-MM-dd");
+                                      DateFormat jamformat =
+                                          DateFormat("HH:mm");
+                                      String dateStr = newFormat
+                                          .format(oldFormat.parse(date));
+                                      String showjam = jamformat
+                                          .format(oldFormat.parse(date));
+
+                                      return Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Text(
+                                            models[index].deliverynumber,
+                                            style: textstyle,
+                                          ),
+                                          Text(
+                                            "$dateStr - $showjam",
+                                            style: TextStyle(
+                                              fontSize: 12,
+                                            ),
+                                          ),
+                                          Text(
+                                            models[index].name,
+                                            style: TextStyle(
+                                              fontSize: 12,
+                                            ),
+                                          ),
+                                        ],
+                                      );
+                                    }),
+                              );
+                            },
+                          ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ));
   }
 }

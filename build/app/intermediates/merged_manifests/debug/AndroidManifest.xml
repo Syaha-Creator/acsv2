@@ -58,7 +58,7 @@
         android:name="android.app.Application"
         android:appComponentFactory="androidx.core.app.CoreComponentFactory"
         android:debuggable="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/logo"
         android:label="acsv2" >
         <activity
             android:name="com.syahrul.acsv2.MainActivity"

@@ -37,6 +37,7 @@ class _LoginState extends State<Login> {
   bool _isHidePassword = true;
   TextEditingController formemail = TextEditingController();
   TextEditingController formpass = TextEditingController();
+  final _formKey = GlobalKey<FormState>();
 
   void _tooglePasswordvisible() {
     setState(() {
@@ -188,158 +189,174 @@ class _LoginState extends State<Login> {
                 image: DecorationImage(
                     image: AssetImage('assets/Top.png'), fit: BoxFit.fill))),
       ),
-      body: SafeArea(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: <Widget>[
-            //Header Container
-            //Body Container
-            Expanded(
-              child: SingleChildScrollView(
-                padding: const EdgeInsets.symmetric(horizontal: 30.0),
-                child: Column(
-                  children: <Widget>[
-                    Container(
-                      margin: const EdgeInsets.only(left: 15, right: 15),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Image.asset(
-                            'assets/login.png',
-                            width: 300,
-                          ),
-                          const SizedBox(
-                            height: 20,
-                          ),
-                          Container(
-                            padding: const EdgeInsets.all(10),
-                            decoration: const BoxDecoration(
-                                color: Color(0xFFFFFFFF),
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Color(0xFFFFFFFF),
-                                    blurRadius: 8.0,
-                                  )
-                                ],
-                                borderRadius: BorderRadius.all(
-                                  Radius.circular(10),
-                                )),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                const Text(
-                                  'Email',
-                                  style: TextStyle(
-                                      fontFamily: 'Poppins',
-                                      fontWeight: FontWeight.w600,
-                                      letterSpacing: 1,
-                                      fontSize: 14),
-                                ),
-                                const SizedBox(
-                                  height: 10,
-                                ),
-                                TextFormField(
-                                  controller: formemail,
-                                  keyboardType: TextInputType.emailAddress,
-                                  decoration: InputDecoration(
-                                    hintText: 'Masukkan Email Anda',
-                                    prefixIcon: const Icon(Icons.email),
-                                    hintStyle: const TextStyle(
-                                      fontSize: 12,
-                                      fontWeight: FontWeight.w400,
-                                      fontFamily: 'Poppins',
-                                      letterSpacing: 1,
-                                    ),
-                                    enabledBorder: OutlineInputBorder(
-                                      borderSide: const BorderSide(
-                                        width: 1,
-                                        color: Colors.grey,
-                                      ),
-                                      borderRadius: BorderRadius.circular(10),
-                                    ),
+      body: Form(
+        key: _formKey,
+        child: SafeArea(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: <Widget>[
+              //Header Container
+              //Body Container
+              Expanded(
+                child: SingleChildScrollView(
+                  padding: const EdgeInsets.symmetric(horizontal: 30.0),
+                  child: Column(
+                    children: <Widget>[
+                      Container(
+                        margin: const EdgeInsets.only(left: 15, right: 15),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Image.asset(
+                              'assets/login.png',
+                              width: 300,
+                            ),
+                            const SizedBox(
+                              height: 20,
+                            ),
+                            Container(
+                              padding: const EdgeInsets.all(10),
+                              decoration: const BoxDecoration(
+                                  color: Color(0xFFFFFFFF),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: Color(0xFFFFFFFF),
+                                      blurRadius: 8.0,
+                                    )
+                                  ],
+                                  borderRadius: BorderRadius.all(
+                                    Radius.circular(10),
+                                  )),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  const Text(
+                                    'Email',
+                                    style: TextStyle(
+                                        fontFamily: 'Poppins',
+                                        fontWeight: FontWeight.w600,
+                                        letterSpacing: 1,
+                                        fontSize: 14),
                                   ),
-                                ),
-                                const SizedBox(
-                                  height: 10,
-                                ),
-                                const Text(
-                                  'Password',
-                                  style: TextStyle(
-                                      fontFamily: 'Poppins',
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.w600,
-                                      letterSpacing: 1),
-                                ),
-                                const SizedBox(
-                                  height: 10,
-                                ),
-                                TextFormField(
-                                  controller: formpass,
-                                  obscureText: _isHidePassword,
-                                  decoration: InputDecoration(
-                                      hintText: "Masukkan Password Anda",
-                                      prefixIcon: const Icon(Icons.key),
-                                      suffixIcon: GestureDetector(
-                                        onTap: () {
-                                          _tooglePasswordvisible();
-                                        },
-                                        child: Icon(
-                                          _isHidePassword
-                                              ? Icons.visibility_off
-                                              : Icons.visibility,
-                                          color: _isHidePassword
-                                              ? Colors.black
-                                              : Colors.blue,
-                                        ),
-                                      ),
+                                  const SizedBox(
+                                    height: 10,
+                                  ),
+                                  TextFormField(
+                                    validator: (e) {
+                                      if (e!.isEmpty) {
+                                        return "Tolong Masukkan Email Anda";
+                                      }
+                                    },
+                                    controller: formemail,
+                                    keyboardType: TextInputType.emailAddress,
+                                    decoration: InputDecoration(
+                                      hintText: 'Masukkan Email Anda',
+                                      prefixIcon: const Icon(Icons.email),
                                       hintStyle: const TextStyle(
                                         fontSize: 12,
                                         fontWeight: FontWeight.w400,
+                                        fontFamily: 'Poppins',
+                                        letterSpacing: 1,
                                       ),
                                       enabledBorder: OutlineInputBorder(
                                         borderSide: const BorderSide(
-                                            width: 1, color: Colors.grey),
+                                          width: 1,
+                                          color: Colors.grey,
+                                        ),
                                         borderRadius: BorderRadius.circular(10),
-                                      )),
-                                ),
-                                const SizedBox(
-                                  height: 10,
-                                ),
-                                Align(
-                                  alignment: Alignment.center,
-                                  child: MaterialButton(
-                                    onPressed: () {
-                                      create();
-                                    },
-                                    color: Colors.blueAccent,
-                                    shape: const RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.all(
-                                        Radius.circular(10),
                                       ),
                                     ),
-                                    child: const Text(
-                                      "Login",
-                                      style: TextStyle(color: Colors.white),
-                                    ),
                                   ),
-                                )
-                              ],
-                            ),
-                          )
-                        ],
-                      ),
-                    )
-                  ],
+                                  const SizedBox(
+                                    height: 10,
+                                  ),
+                                  const Text(
+                                    'Password',
+                                    style: TextStyle(
+                                        fontFamily: 'Poppins',
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.w600,
+                                        letterSpacing: 1),
+                                  ),
+                                  const SizedBox(
+                                    height: 10,
+                                  ),
+                                  TextFormField(
+                                    validator: (e) {
+                                      if (e!.isEmpty) {
+                                        return "Tolong Masukkan Password Anda";
+                                      }
+                                    },
+                                    controller: formpass,
+                                    obscureText: _isHidePassword,
+                                    decoration: InputDecoration(
+                                        hintText: "Masukkan Password Anda",
+                                        prefixIcon: const Icon(Icons.key),
+                                        suffixIcon: GestureDetector(
+                                          onTap: () {
+                                            _tooglePasswordvisible();
+                                          },
+                                          child: Icon(
+                                            _isHidePassword
+                                                ? Icons.visibility_off
+                                                : Icons.visibility,
+                                            color: _isHidePassword
+                                                ? Colors.black
+                                                : Colors.blue,
+                                          ),
+                                        ),
+                                        hintStyle: const TextStyle(
+                                          fontSize: 12,
+                                          fontWeight: FontWeight.w400,
+                                        ),
+                                        enabledBorder: OutlineInputBorder(
+                                          borderSide: const BorderSide(
+                                              width: 1, color: Colors.grey),
+                                          borderRadius:
+                                              BorderRadius.circular(10),
+                                        )),
+                                  ),
+                                  const SizedBox(
+                                    height: 10,
+                                  ),
+                                  Align(
+                                    alignment: Alignment.center,
+                                    child: MaterialButton(
+                                      onPressed: () {
+                                        if (_formKey.currentState!.validate()) {
+                                          create();
+                                        }
+                                      },
+                                      color: Colors.blueAccent,
+                                      shape: const RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.all(
+                                          Radius.circular(10),
+                                        ),
+                                      ),
+                                      child: const Text(
+                                        "Login",
+                                        style: TextStyle(color: Colors.white),
+                                      ),
+                                    ),
+                                  )
+                                ],
+                              ),
+                            )
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
                 ),
               ),
-            ),
-            // Container(
-            //     height: 100,
-            //     decoration: const BoxDecoration(
-            //         image: DecorationImage(
-            //             image: AssetImage('assets/Bot.png'),
-            //             fit: BoxFit.fill))),
-          ],
+              // Container(
+              //     height: 100,
+              //     decoration: const BoxDecoration(
+              //         image: DecorationImage(
+              //             image: AssetImage('assets/Bot.png'),
+              //             fit: BoxFit.fill))),
+            ],
+          ),
         ),
       ),
     );

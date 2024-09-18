@@ -92,7 +92,7 @@
 59        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
 59-->[androidx.core:core:1.13.1] /Users/syahrulazhar/.gradle/caches/transforms-3/67a2055b0671aa3010f0bc50e19049d7/transformed/core-1.13.1/AndroidManifest.xml:28:18-86
 60        android:debuggable="true"
-61        android:icon="@mipmap/ic_launcher"
+61        android:icon="@drawable/logo"
 62        android:label="acsv2" >
 63        <activity
 64            android:name="com.syahrul.acsv2.MainActivity"
